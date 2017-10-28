@@ -1,2 +1,2 @@
 # TStack
-Stack realisation
+Stack realisation by Vadim Kutovoi 2017 UNN
