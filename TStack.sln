@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TStack", "TStack\TStack.vcxproj", "{BFADCA61-423D-4FF8-8B6D-F8F040A0B5BE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestStack", "TestStack\TestStack.vcxproj", "{854B0CBA-9B4D-470F-BDE3-2E0D980BCD04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFADCA61-423D-4FF8-8B6D-F8F040A0B5BE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BFADCA61-423D-4FF8-8B6D-F8F040A0B5BE}.Debug|Win32.Build.0 = Debug|Win32
+		{BFADCA61-423D-4FF8-8B6D-F8F040A0B5BE}.Release|Win32.ActiveCfg = Release|Win32
+		{BFADCA61-423D-4FF8-8B6D-F8F040A0B5BE}.Release|Win32.Build.0 = Release|Win32
+		{854B0CBA-9B4D-470F-BDE3-2E0D980BCD04}.Debug|Win32.ActiveCfg = Debug|Win32
+		{854B0CBA-9B4D-470F-BDE3-2E0D980BCD04}.Debug|Win32.Build.0 = Debug|Win32
+		{854B0CBA-9B4D-470F-BDE3-2E0D980BCD04}.Release|Win32.ActiveCfg = Release|Win32
+		{854B0CBA-9B4D-470F-BDE3-2E0D980BCD04}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
