@@ -16,6 +16,7 @@ public:
 	T Pop();
 	T Top();
 	void Push(T a);
+	void Clr();
 };
     
     template <class T>
@@ -29,13 +30,14 @@ public:
 	}
 
     template <class T>
-	TStack<T>::TStack(const TStack &T)
+	TStack<T>::TStack(const TStack &TS)
 	{
-		MaxSize = T.MaxSize;
-		Size = T.Size;
+		MaxSize = TS.MaxSize;
+		Size = TS.Size;
+		Mas = new T[MaxSize];
 
 		for(int i = 0; i < Size; i++){
-			Mas[i] = T.Mas[i];
+			Mas[i] = TS.Mas[i];
 	     }
 	}
 	
@@ -83,4 +85,10 @@ public:
 			Mas[Size] = a;
 			Size++;
 		}
+	}
+
+	template <class T>
+	void TStack<T>::Clr()
+	{
+		Size = 0;
 	}
