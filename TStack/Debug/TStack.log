@@ -1,0 +1,9 @@
+﻿  main.cpp
+  TCalculator.cpp
+c:\users\user\documents\visual studio 2015\git\labstack\tstack\tcalculator.cpp(17): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\git\labstack\tstack\tcalculator.cpp(52): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\visual studio 2015\git\labstack\tstack\tcalculator.cpp(83): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+c:\users\user\documents\visual studio 2015\git\labstack\tstack\tcalculator.cpp(41): warning C4715: 'TCalculator::Prty': not all control paths return a value
+  TStack.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Git\LabStack\Debug\TStack.exe
+  TStack.vcxproj -> C:\Users\User\Documents\Visual Studio 2015\Git\LabStack\Debug\TStack.pdb (Full PDB)

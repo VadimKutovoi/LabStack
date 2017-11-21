@@ -12,25 +12,26 @@ string TCalculator::GetPost()
 
 int TCalculator::StCheck()
 {
-	for(int i = 0; i < inf.size(); i++)
+	StC.Clr();
+
+	for (int i = 0; i < inf.size(); i++)
 	{
-		if(inf[i]=='(') StC.Push('(');
-		if(inf[i]==')') 
+		if (inf[i] == '(') StC.Push('(');
+		if (inf[i] == ')')
 		{
-			if(StC.IsEmpty()) return 0;
-			else StC.Pop();
+			if (StC.IsEmpty()) return 0;
+			StC.Pop();
 		}
+	}
 		if(StC.IsEmpty()) return 1;
 		else return 0;
-	}
 }
 
 int TCalculator::Prty(char c)
 {
 	switch(c)
 	{
-	case '(': return 4;
-	case ')': return 0;
+	case '(': return 0;
 	case '+': return 1;
 	case '-': return 1;
 	case '*': return 2;
@@ -41,14 +42,17 @@ int TCalculator::Prty(char c)
 
 void TCalculator::ToPost()
 {
+	if (!StCheck()) throw -1;
+	
+	post = "";
 	StC.Clr();
-
+	
 	string buf = '(' + inf + ')';
 
 	for(int i = 0; i < buf.size(); i++)
 	{
 		if(buf[i] == '(') StC.Push('(');
-		if(((buf[i] >= '0'|| buf[i] <= '9')) || buf[i] == '.') post+=buf[i]; 
+		if(((buf[i] >= '0'&& buf[i] <= '9')) || buf[i] == '.') post += buf[i]; 
 		if(buf[i] == ')')
 		{
 			char el = StC.Pop();
@@ -67,8 +71,8 @@ void TCalculator::ToPost()
 			{
 				post += StC.Pop();
 			}
+			StC.Push(buf[i]);
 		}
-		StC.Push(buf[i]);
 	}
 }
 
@@ -76,9 +80,9 @@ double TCalculator::Calcucate()
 {
 	StD.Clr();
 
-	for(int i = 0; i < post.size(); i++)
+	for (int i = 0; i < post.size(); i++)
 	{
-		if(post[i] == '+' || post[i] == '-' || post[i] == '*' || post[i] == '/' || post[i] == '^')
+		if (post[i] == '+' || post[i] == '-' || post[i] == '*' || post[i] == '/' || post[i] == '^')
 		{
 			double op1, op2, res;
 
@@ -87,21 +91,21 @@ double TCalculator::Calcucate()
 
 			switch (post[i])
 			{
-			case '+': res = op1 + op2;
-	        case '-': res = op1 - op2;
-	        case '*': res = op1 * op2;
-	        case '/': res = op1 / op2;
-			case '^': res = pow(op1, op2);
+			case '+': res = op1 + op2; break;
+			case '-': res = op1 - op2; break;
+			case '*': res = op1 * op2; break;
+			case '/': res = op1 / op2; break;
+			case '^': res = pow(op1, op2); break;
 			}
 			StD.Push(res);
 		}
 
-		if(post[i] >= '0' && post[i] <= '9' || post[i] == '.')
+		if (post[i] >= '0' && post[i] <= '9' || post[i] == '.')
 		{
 			char *tmp;
 			double res = strtod(&post[i], &tmp);
 			int j = tmp - &post[i];
-			
+
 			i += j - 1;
 			StD.Push(res);
 		}

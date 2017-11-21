@@ -1,10 +1,15 @@
 #include "..\TStack\TCalculator.h"
 #include <iostream>
+
 void main()
 {
 	TCalculator clc;
+	string data;
 
-	clc.SetInf("2+2*2");
+	cout << "Enter expression" << endl;
+	cin >> data;
+
+	clc.SetInf(data);
 	clc.ToPost();
-	cout << clc.Calcucate();
+	cout << clc.Calcucate() << endl;
 }
